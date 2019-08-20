@@ -12,6 +12,6 @@ docker push superclass2016/multi-worker:$SHA
 
 kubectl apply -f k8s
 
-kubectl set deployments/client-deployment client=superclass2016/multi-client:$SHA
-kubectl set deployments/server-deployment server=superclass2016/multi-server:$SHA
-kubectl set deployments/worker-deployment worker=superclass2016/multi-worker:$SHA
+kubectl set image deployments/client-deployment client=superclass2016/multi-client:$SHA
+kubectl set image deployments/server-deployment server=superclass2016/multi-server:$SHA
+kubectl set image deployments/worker-deployment worker=superclass2016/multi-worker:$SHA
