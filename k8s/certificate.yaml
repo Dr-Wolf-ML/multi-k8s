@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: grudge-tech-tls
+spec:
+  secretName: grudge-tech
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: grudge.tech
+  dnsNames:
+    - grudge.tech
+    - www.grudge.tech
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - grudge.tech
+          - www.grudge.tech
