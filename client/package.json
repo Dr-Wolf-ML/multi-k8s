@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-router-dom": "4.3.1",
     "react-scripts": "3.1.1"
   },
@@ -13,12 +13,23 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "webpack-dev-server --mode development --hot"
   },
   "devDependencies": {
     "lodash.template": ">=4.5.0",
     "mem": ">=4.0.0",
-    "eslint": "6.2.0"
+    "eslint": "6.2.0",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "browserslist": {
     "production": [

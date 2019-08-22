@@ -14,9 +14,34 @@ build:
         dest: .
     docker:
       dockerfile: Dockerfile.dev
+  # other image files here in original course
+  - image: superclass2016/multi-server
+    context: ./server
+    sync:
+      manual:
+      - src: '**/*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile.dev
+  - image: superclass2016/multi-worker
+    context: ./worker
+    sync:
+      manual:
+      - src: '**/*.js'
+        dest: .
+    docker:
+      dockerfile: Dockerfile.dev
   local:
     push: false
 deploy:
   kubectl:
     manifests:
     - k8s/client-deployment.yaml
+    - k8s/server-deployment.yaml
+    - k8s/worker-deployment.yaml
+    - k8s/client-cluster-ip-service.yaml
+    - k8s/server-cluster-ip-service.yaml
+# portForward:
+#   - resourceType: deployment
+#     resourceName: superclass2016/multi-client
+#     port: 80
